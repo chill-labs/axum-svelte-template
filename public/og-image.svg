@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f1f4f8" />
+      <stop offset="50%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#e6eff5" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1d79ed" />
+      <stop offset="100%" stop-color="#17c1e8" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <circle cx="1050" cy="110" r="220" fill="#3b91ff" fill-opacity="0.08" />
+  <circle cx="150" cy="540" r="180" fill="#ffb84d" fill-opacity="0.12" />
+
+  <rect x="88" y="96" width="1024" height="438" rx="32" fill="#ffffff" stroke="#e9ecf0" stroke-width="2" />
+  <rect x="148" y="156" width="96" height="96" rx="24" fill="url(#cardGrad)" />
+  <path d="M174 205L190 221L220 187" stroke="#ffffff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
+
+  <text x="272" y="198" fill="#344767" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="44" font-weight="800">
+    Axum + Svelte 5 Template
+  </text>
+  <text x="272" y="242" fill="#67748e" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="24" font-weight="500">
+    Rust Axum 0.8 • SeaORM • PostgreSQL • Svelte 5 Runes • Tailwind v4
+  </text>
+
+  <g font-family="Inter, system-ui, -apple-system, sans-serif" font-size="20" font-weight="600">
+    <rect x="148" y="302" width="210" height="52" rx="14" fill="#e6eff5" />
+    <text x="174" y="335" fill="#0a3d62">AST gen-ts Sync</text>
+
+    <rect x="378" y="302" width="230" height="52" rx="14" fill="#fef6e7" />
+    <text x="404" y="335" fill="#915e0a">Workspace RBAC</text>
+
+    <rect x="628" y="302" width="215" height="52" rx="14" fill="#ecfdf5" />
+    <text x="654" y="335" fill="#065f46">Real-time SSE</text>
+
+    <rect x="863" y="302" width="190" height="52" rx="14" fill="#eff6ff" />
+    <text x="890" y="335" fill="#1d4ed8">R2 XOR Media</text>
+  </g>
+
+  <text x="148" y="458" fill="#8392ab" font-family="Inter, system-ui, -apple-system, sans-serif" font-size="20" font-weight="500">
+    Production-ready full-stack starter with Moka caching, OAuth 2.0, and Docker multi-stage builds.
+  </text>
+</svg>

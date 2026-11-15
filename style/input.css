@@ -1,0 +1,496 @@
+@import "tailwindcss";
+@source "../svelte-app/src/**/*.{svelte,ts,html}";
+@source "../public/guides/**/*.html";
+@source "../public/js/**/*.js";
+
+@theme {
+  /* Font families */
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "Inter", system-ui, -apple-system, sans-serif;
+
+  /* Primary - Soft UI Blue */
+  --color-primary: #3b91ff;
+  --color-primary-content: #ffffff;
+  --color-primary-hover: #2d86f7;
+  --color-primary-focus: #1d79ed;
+
+  --color-primary-50: #e6eff5;
+  --color-primary-100: #cce0eb;
+  --color-primary-200: #99c1d7;
+  --color-primary-300: #66a2c3;
+  --color-primary-400: #3383af;
+  --color-primary-500: #0a3d62;
+  --color-primary-600: #092f4b;
+  --color-primary-700: #072035;
+  --color-primary-800: #04101a;
+  --color-primary-900: #02080d;
+
+  /* Secondary - Sophisticated Slate */
+  --color-secondary: #607d94;
+  --color-secondary-content: #ffffff;
+  --color-secondary-hover: #536e83;
+
+  /* Accent - Golden Amber */
+  --color-accent: #ffb84d;
+  --color-accent-content: #242831;
+  --color-accent-hover: #f7ad3d;
+
+  --color-accent-50: #fef6e7;
+  --color-accent-100: #fdecce;
+  --color-accent-200: #fbd99d;
+  --color-accent-300: #f9c66c;
+  --color-accent-400: #f7b33b;
+  --color-accent-500: #f39c12;
+  --color-accent-600: #c27d0e;
+  --color-accent-700: #915e0a;
+  --color-accent-800: #613f07;
+  --color-accent-900: #301f03;
+
+  /* Neutral - Slate context */
+  --color-neutral: #516d83;
+  --color-neutral-content: #ffffff;
+  --color-neutral-hover: #455f73;
+
+  /* Base colors - Clean Soft UI surfaces */
+  --color-base-main: #f1f4f8;
+  --color-base-sub: #ffffff;
+  --color-base-elevated: #e9eff5;
+  --color-base-elevated-hover: #dce5ef;
+  --color-bg-main: #f1f4f8;
+  --color-bg-sub: #ffffff;
+
+  /* Soft UI text hierarchy */
+  --color-base-content: #344767;
+  --color-base-content-secondary: #67748e;
+  --color-base-content-muted: #8392ab;
+  --color-text-main: #344767;
+  --color-text-secondary: #67748e;
+  --color-text-muted: #8392ab;
+
+  /* State colors */
+  --color-info: #17c1e8;
+  --color-info-content: #ffffff;
+  --color-success: #82d616;
+  --color-success-content: #ffffff;
+  --color-warning: #fbcf33;
+  --color-warning-content: #344767;
+  --color-error: #ea0606;
+  --color-error-content: #ffffff;
+
+  /* Dividers & Ghost Hover */
+  --color-ghost-hover: rgba(52, 71, 103, 0.05);
+  --color-base-line: #e9ecf0;
+
+  /* Soft UI Gradients */
+  --background-image-gradient-primary: linear-gradient(310deg, #1d79ed 0%, #59a6ff 100%);
+  --background-image-gradient-secondary: linear-gradient(310deg, #536e83 0%, #839ab1 100%);
+  --background-image-gradient-accent: linear-gradient(310deg, #d6983d 0%, #ffc266 100%);
+  --background-image-gradient-info: linear-gradient(310deg, #069cb8 0%, #4dd3f0 100%);
+  --background-image-gradient-success: linear-gradient(310deg, #5e9e0d 0%, #a0e838 100%);
+  --background-image-gradient-warning: linear-gradient(310deg, #d1a61c 0%, #fce16d 100%);
+  --background-image-gradient-error: linear-gradient(310deg, #bd0404 0%, #ff4d4d 100%);
+  --background-image-gradient-dark: linear-gradient(310deg, #141a24 0%, #33445c 100%);
+
+  /* Background Gradients */
+  --background-image-bg-gradient-light: radial-gradient(circle at 50% 0%, #ffffff 0%, #f1f4f8 100%);
+  --background-image-bg-gradient-dark: radial-gradient(circle at 50% 0%, #2f3e5e 0%, #1a2335 100%);
+
+  /* Soft UI Shadows */
+  --shadow-soft:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+/* ==============================================================================
+ * DARK MODE OVERRIDES
+ * ============================================================================== */
+
+.dark {
+  --color-primary: #59a6ff;
+  --color-primary-hover: #75b4ff;
+
+  --color-accent: #ffbe5e;
+  --color-accent-content: #242831;
+
+  --color-base-main: #10172a;
+  --color-base-sub: #162337;
+  --color-base-elevated: #242e3f;
+  --color-base-elevated-hover: #5f6c82;
+  --color-bg-main: #10172a;
+  --color-bg-sub: #162337;
+
+  --color-base-content: #e2e8f0;
+  --color-base-content-secondary: #94a3b8;
+  --color-base-content-muted: #64748b;
+  --color-text-main: #e2e8f0;
+  --color-text-secondary: #94a3b8;
+  --color-text-muted: #64748b;
+
+  --color-neutral: #3e5669;
+  --color-neutral-content: #f1f5f9;
+  --color-neutral-hover: #496378;
+
+  --color-ghost-hover: rgba(226, 232, 240, 0.1);
+  --color-base-line: #354050;
+}
+
+/* ==============================================================================
+ * MODERN GRADIENT INTERPOLATION & ELEVATED CTA BUTTON UTILITIES
+ * ============================================================================== */
+
+:root {
+  --in-oklab: ;
+  --in-oklch: ;
+}
+
+@supports (background: linear-gradient(in oklab, white, black)) {
+  :root {
+    --in-oklab: in oklab;
+    --in-oklch: in oklch;
+  }
+}
+
+.cta-gradient-primary {
+  background-image: linear-gradient(
+    135deg var(--in-oklch),
+    #2563eb 0%,
+    #3b82f6 48%,
+    #4f46e5 100%
+  );
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow:
+    0 8px 20px -4px rgba(37, 99, 235, 0.36),
+    0 2px 6px -1px rgba(37, 99, 235, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28);
+  transition:
+    transform 0.2s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.2s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.2s ease;
+}
+
+.cta-gradient-primary:hover:not(:disabled) {
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+  box-shadow:
+    0 12px 24px -4px rgba(37, 99, 235, 0.46),
+    0 4px 8px -2px rgba(37, 99, 235, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.cta-gradient-primary:active:not(:disabled) {
+  transform: translateY(0) scale(0.985);
+}
+
+.cta-gradient-success {
+  background-image: linear-gradient(
+    135deg var(--in-oklch),
+    #059669 0%,
+    #0d9488 50%,
+    #0284c7 100%
+  );
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  box-shadow:
+    0 8px 20px -4px rgba(13, 148, 136, 0.36),
+    0 2px 6px -1px rgba(5, 150, 105, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28);
+  transition:
+    transform 0.2s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.2s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.2s ease;
+}
+
+.cta-gradient-success:hover:not(:disabled) {
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+  box-shadow:
+    0 12px 24px -4px rgba(13, 148, 136, 0.46),
+    0 4px 8px -2px rgba(5, 150, 105, 0.26),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.cta-gradient-success:active:not(:disabled) {
+  transform: translateY(0) scale(0.985);
+}
+
+@media (forced-colors: active) {
+  .cta-gradient-primary,
+  .cta-gradient-success {
+    border: 2px solid ButtonText;
+    color: ButtonText;
+    background: ButtonFace;
+  }
+}
+
+/* ==============================================================================
+ * BASE STYLES
+ * ============================================================================== */
+
+html,
+body {
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overscroll-behavior: none;
+}
+
+button:focus,
+button:focus-visible,
+a:focus,
+a:focus-visible {
+  outline: none;
+}
+
+/* ==============================================================================
+ * GLASS & SOFT CARD SURFACES
+ * ============================================================================== */
+
+.glass-card {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(226, 232, 240, 0.4)),
+    var(--color-base-sub);
+  border: 1px solid rgba(201, 201, 201, 0.5);
+  box-shadow:
+    0 1px 10px rgba(52, 71, 103, 0.1),
+    0 4px 10px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(52, 71, 103, 0.05),
+    inset 0 0 20px 10px rgba(239, 246, 255, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.dark .glass-card {
+  background: var(--color-base-sub);
+  border-color: rgba(255, 255, 255, 0.04);
+  box-shadow:
+    0 1px 10px rgba(0, 0, 0, 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.02),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.03),
+    inset 0 0 3px 2px rgba(255, 255, 255, 0.02);
+}
+
+.soft-card {
+  background-color: var(--color-base-sub);
+  border: 1px solid var(--color-base-line);
+  border-radius: 1rem;
+  box-shadow: var(--shadow-soft);
+}
+
+/* ==============================================================================
+ * UTILITY ANIMATIONS
+ * ============================================================================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes toastSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-100%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes toastSlideUp {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-100%) scale(0.9);
+  }
+}
+
+@keyframes modalEntry {
+  from {
+    opacity: 0;
+    transform: translateY(32px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes modalExit {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(32px) scale(0.96);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.25s ease-out forwards;
+}
+
+.animate-fade-slide-in {
+  animation: fadeSlideIn 0.35s ease-out forwards;
+}
+
+.animate-card-entrance {
+  animation: cardEntrance 0.35s ease-out forwards;
+}
+
+.animate-toast-in {
+  animation: toastSlideDown 0.35s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.animate-toast-out {
+  animation: toastSlideUp 0.25s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-modal-in {
+  animation: modalEntry 0.16s ease-out forwards;
+}
+
+.animate-modal-out {
+  animation: modalExit 0.12s ease-out forwards;
+}
+
+.animate-backdrop-in {
+  animation: fadeIn 0.14s ease-out forwards;
+}
+
+.animate-backdrop-out {
+  animation: fadeOut 0.12s ease-out forwards;
+}
+
+/* ==============================================================================
+ * ADAPTIVE CONTAINER GRID & SCROLLBARS
+ * ============================================================================== */
+
+.disable-transitions * {
+  transition: none !important;
+}
+
+.adaptive-grid-container {
+  container-type: inline-size;
+  width: 100%;
+}
+
+.adaptive-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+@container (min-width: 540px) {
+  .adaptive-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@container (min-width: 860px) {
+  .adaptive-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 100, 100, 0.4);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(100, 100, 100, 0.6);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(100, 100, 100, 0.4) transparent;
+}
+
+/* Prevent iOS Safari input auto-zoom below 16px on mobile screens */
+@media screen and (max-width: 800px) {
+  input,
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+}

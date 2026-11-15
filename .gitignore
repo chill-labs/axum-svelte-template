@@ -1,0 +1,29 @@
+# Rust build artifacts
+/target/
+**/*.rs.bk
+
+# Environment files (keep .env.example)
+.env
+.env.*
+!.env.example
+
+# Node / SvelteKit / Playwright
+svelte-app/node_modules/
+svelte-app/.svelte-kit/
+svelte-app/build/
+svelte-app/playwright-report/
+svelte-app/test-results/
+
+# Local caches, logs, temp files
+.cache/
+logs/
+*.log
+tmp/
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo

@@ -1,0 +1,29 @@
+<div class="space-y-4 text-sm leading-relaxed text-base-content">
+  <div class="p-4 rounded-2xl bg-primary/10 border border-primary/20 space-y-1.5">
+    <h4 class="font-bold text-base text-base-content">
+      Workspace Todos &amp; Real-Time Collaboration
+    </h4>
+    <p class="text-base-content-secondary">
+      Every account automatically receives a personal workspace with starter tasks on first signup via PostgreSQL triggers. Switch workspaces anytime from the header selector.
+    </p>
+  </div>
+
+  <div class="space-y-2.5 p-4 rounded-2xl bg-base-main border border-base-line">
+    <h5 class="font-semibold text-base-content">1. Creating, Filtering &amp; Prioritizing Tasks</h5>
+    <ul class="list-disc pl-5 space-y-1.5 text-base-content-secondary">
+      <li><strong class="text-base-content">Statuses:</strong> Track items across <code class="px-1.5 py-0.5 rounded bg-base-sub border border-base-line">todo</code>, <code class="px-1.5 py-0.5 rounded bg-base-sub border border-base-line">in_progress</code>, and <code class="px-1.5 py-0.5 rounded bg-base-sub border border-base-line">done</code>.</li>
+      <li><strong class="text-base-content">Priorities:</strong> Categorize tasks as <code class="px-1.5 py-0.5 rounded bg-base-sub border border-base-line">low</code>, <code class="px-1.5 py-0.5 rounded bg-base-sub border border-base-line">medium</code>, <code class="px-1.5 py-0.5 rounded bg-base-sub border border-base-line">high</code>, or <code class="px-1.5 py-0.5 rounded bg-base-sub border border-base-line">urgent</code>.</li>
+      <li><strong class="text-base-content">Nullable PATCH Fields:</strong> Clearing description, due date, or assignee sends an explicit <code class="px-1.5 py-0.5 rounded bg-base-sub border border-base-line">null</code> using three-state <code class="px-1.5 py-0.5 rounded bg-base-sub border border-base-line">deserialize_double_option</code> semantics.</li>
+    </ul>
+  </div>
+
+  <div class="space-y-2.5 p-4 rounded-2xl bg-base-main border border-base-line">
+    <h5 class="font-semibold text-base-content">2. Real-Time SSE &amp; Optional R2 Image Attachments</h5>
+    <p class="text-base-content-secondary">
+      Connected tabs subscribe to <code class="px-1.5 py-0.5 rounded bg-base-sub border border-base-line">/api/notifications/sse</code> so task mutations and notifications refresh across collaborators automatically.
+    </p>
+    <p class="text-base-content-secondary">
+      When <code class="px-1.5 py-0.5 rounded bg-base-sub border border-base-line">APP__R2__*</code> credentials are configured, attached images are WebP-compressed in the browser, XOR-obfuscated before direct presigned upload, and decrypted on demand by <code class="px-1.5 py-0.5 rounded bg-base-sub border border-base-line">ProtectedImage.svelte</code>.
+    </p>
+  </div>
+</div>

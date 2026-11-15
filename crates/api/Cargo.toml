@@ -1,0 +1,33 @@
+# =============================================================================
+# CRATE: api — Axum REST/SSE Handlers & AST TypeScript Codegen (gen-ts)
+# =============================================================================
+
+[package]
+name = "api"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+shared.workspace = true
+services.workspace = true
+axum.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tokio.workspace = true
+tokio-stream.workspace = true
+futures.workspace = true
+cookie.workspace = true
+syn.workspace = true
+tracing.workspace = true
+chrono.workspace = true
+urlencoding.workspace = true
+uuid.workspace = true
+sha2.workspace = true
+hex.workspace = true
+reqwest.workspace = true
+
+[[bin]]
+name = "gen-ts"
+path = "src/bin/gen_ts.rs"

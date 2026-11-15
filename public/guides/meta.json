@@ -1,0 +1,53 @@
+{
+  "exclude": [
+    "/healthcheck",
+    "/auth/*"
+  ],
+  "guides": [
+    {
+      "id": "todos",
+      "title": "Workspace Todos Guide",
+      "patterns": [
+        "/",
+        "/todos"
+      ],
+      "tabs": [
+        {
+          "title": "Todos Workflow",
+          "file": "todos-guide.html"
+        },
+        {
+          "title": "Workspaces & RBAC",
+          "file": "workspaces-guide.html"
+        }
+      ]
+    },
+    {
+      "id": "workspaces",
+      "title": "Workspaces & Collaborator Permissions",
+      "patterns": [
+        "/workspaces",
+        "/workspaces/*"
+      ],
+      "tabs": [
+        {
+          "title": "Workspaces & RBAC",
+          "file": "workspaces-guide.html"
+        },
+        {
+          "title": "Todos Workflow",
+          "file": "todos-guide.html"
+        }
+      ]
+    },
+    {
+      "id": "admin",
+      "title": "Admin Console Guide",
+      "patterns": [
+        "/admin",
+        "/admin/*"
+      ],
+      "file": "admin-guide.html"
+    }
+  ]
+}

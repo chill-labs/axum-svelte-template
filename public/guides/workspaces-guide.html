@@ -1,0 +1,23 @@
+<div class="space-y-4 text-sm leading-relaxed text-base-content">
+  <div class="p-4 rounded-2xl bg-primary/10 border border-primary/20 space-y-1.5">
+    <h4 class="font-bold text-base text-base-content">
+      Multi-Tenant Workspaces &amp; Granular RBAC
+    </h4>
+    <p class="text-base-content-secondary">
+      Isolate tasks, attachments, and collaborator access per workspace. Your active selection is persisted on <code class="px-1.5 py-0.5 rounded bg-base-sub border border-base-line">users.active_workspace_id</code> and cached in Moka.
+    </p>
+  </div>
+
+  <div class="space-y-2.5 p-4 rounded-2xl bg-base-main border border-base-line">
+    <h5 class="font-semibold text-base-content">1. Role Presets vs. Custom Permission Matrix</h5>
+    <ul class="list-disc pl-5 space-y-1.5 text-base-content-secondary">
+      <li><strong class="text-base-content">Owner:</strong> Implicitly bypasses granular checks and holds full workspace authority.</li>
+      <li><strong class="text-base-content">Editor / Member / Viewer:</strong> Pre-populated subsets of the 12 <code class="px-1.5 py-0.5 rounded bg-base-sub border border-base-line">Resource × Action</code> grants (<code class="px-1.5 py-0.5 rounded bg-base-sub border border-base-line">Workspace</code>, <code class="px-1.5 py-0.5 rounded bg-base-sub border border-base-line">Members</code>, <code class="px-1.5 py-0.5 rounded bg-base-sub border border-base-line">Todos</code> × <code class="px-1.5 py-0.5 rounded bg-base-sub border border-base-line">View / Create / Edit / Delete</code>).</li>
+      <li><strong class="text-base-content">Custom:</strong> Fine-tune individual JSONB permission flags per member in <code class="px-1.5 py-0.5 rounded bg-base-sub border border-base-line">/workspaces/members</code>.</li>
+    </ul>
+  </div>
+
+  <div class="p-3.5 rounded-xl bg-info/10 border border-info/25 text-base-content-secondary">
+    <strong class="text-base-content">Tip:</strong> Deleting a workspace is guarded against removing your last remaining workspace (<code class="px-1.5 py-0.5 rounded bg-base-sub border border-base-line">CANNOT_DELETE_LAST_WORKSPACE</code>).
+  </div>
+</div>

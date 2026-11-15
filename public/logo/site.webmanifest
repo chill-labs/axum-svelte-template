@@ -1,0 +1,23 @@
+{
+  "name": "Axum Svelte Template",
+  "short_name": "AxumSvelte",
+  "description": "Full-stack Rust Axum + SeaORM + PostgreSQL + Svelte 5 Runes production starter template.",
+  "start_url": "/todos",
+  "display": "standalone",
+  "background_color": "#f1f4f8",
+  "theme_color": "#3b91ff",
+  "icons": [
+    {
+      "src": "/logo/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/logo/apple-touch-icon.svg",
+      "sizes": "180x180",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

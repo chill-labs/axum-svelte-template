@@ -1,0 +1,19 @@
+# =============================================================================
+# CRATE: xtask — Non-Interactive Developer, DB, Codegen & Docker CLI
+# =============================================================================
+
+[package]
+name = "xtask"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+clap.workspace = true
+anyhow.workspace = true
+dotenvy.workspace = true
+walkdir.workspace = true
+serde_json.workspace = true
+tokio.workspace = true
+sea-orm.workspace = true

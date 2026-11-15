@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+Allow: /todos
+Allow: /terms
+Allow: /privacy
+
+Disallow: /workspaces
+Disallow: /workspaces/
+Disallow: /profile
+Disallow: /settings
+Disallow: /admin
+Disallow: /api/
+Disallow: /auth/
+
+Sitemap: https://example.com/sitemap.xml

@@ -1,0 +1,20 @@
+<div class="space-y-4 text-sm leading-relaxed text-base-content">
+  <div class="p-4 rounded-2xl bg-accent/15 border border-accent/30 space-y-1.5">
+    <h4 class="font-bold text-base text-base-content">
+      System Administrator Console (<code class="text-primary">/admin</code>)
+    </h4>
+    <p class="text-base-content-secondary">
+      Accessible strictly to accounts with <code class="px-1.5 py-0.5 rounded bg-base-sub border border-base-line">role = 'admin'</code>. The bootstrap admin email is seeded on startup from <code class="px-1.5 py-0.5 rounded bg-base-sub border border-base-line">APP__ADMIN__EMAIL</code>.
+    </p>
+  </div>
+
+  <div class="space-y-2.5 p-4 rounded-2xl bg-base-main border border-base-line">
+    <h5 class="font-semibold text-base-content">Console Tabs</h5>
+    <ul class="list-disc pl-5 space-y-1.5 text-base-content-secondary">
+      <li><strong class="text-base-content">Users:</strong> Search accounts, inspect workspace counts, and promote/demote system roles.</li>
+      <li><strong class="text-base-content">Hot Support:</strong> Launch an isolated impersonation session via the dedicated <code class="px-1.5 py-0.5 rounded bg-base-sub border border-base-line">hot-support-session</code> cookie without overwriting your admin login.</li>
+      <li><strong class="text-base-content">Test Accounts:</strong> Provision Argon2id password-enabled accounts (<code class="px-1.5 py-0.5 rounded bg-base-sub border border-base-line">is_test_account = true</code>) for automated Playwright E2E and QA login at <code class="px-1.5 py-0.5 rounded bg-base-sub border border-base-line">/auth/login-password</code>.</li>
+      <li><strong class="text-base-content">Global Notifications:</strong> Publish rich HTML announcement banners targeted to <code class="px-1.5 py-0.5 rounded bg-base-sub border border-base-line">all</code>, <code class="px-1.5 py-0.5 rounded bg-base-sub border border-base-line">authenticated</code>, or <code class="px-1.5 py-0.5 rounded bg-base-sub border border-base-line">admins</code> with per-user read tracking.</li>
+    </ul>
+  </div>
+</div>

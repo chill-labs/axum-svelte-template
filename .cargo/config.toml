@@ -1,0 +1,13 @@
+# =============================================================================
+# CARGO WORKSPACE CONFIGURATION
+# =============================================================================
+# Pure native Rust workspace (Axum API/SSR shell + SeaORM services + xtask).
+# Frontend compiles independently in `svelte-app/` via Vite + SvelteKit.
+
+[build]
+# Use incremental compilation for fast local development iterations.
+incremental = true
+
+[alias]
+# Convenience shortcut to regenerate TypeScript DTO & endpoint contracts.
+gen-ts = "run -p api --bin gen-ts"

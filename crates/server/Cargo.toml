@@ -1,0 +1,34 @@
+# =============================================================================
+# CRATE: server — Production Axum HTTP Binary & Static SvelteKit SPA Shell
+# =============================================================================
+
+[package]
+name = "server"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+
+[dependencies]
+shared.workspace = true
+services.workspace = true
+api.workspace = true
+axum.workspace = true
+tokio.workspace = true
+tokio-stream.workspace = true
+tokio-cron-scheduler.workspace = true
+futures.workspace = true
+sea-orm.workspace = true
+tower.workspace = true
+tower-http.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+dotenvy.workspace = true
+tracing.workspace = true
+tracing-log.workspace = true
+tracing-subscriber.workspace = true
+tracing-appender.workspace = true
+anyhow.workspace = true
+cookie.workspace = true
+chrono.workspace = true
+reqwest.workspace = true
